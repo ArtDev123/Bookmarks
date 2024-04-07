@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'django_extensions',
+    'images.apps.ImagesConfig',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
@@ -143,7 +145,7 @@ AUTHENTICATION_BACKENDS = [
 'social_core.backends.google.GoogleOAuth2',
 ]
 
-RUNSERVERPLUS_SERVER_ADDRESS_PORT = 'mysite.com:8000'
+#RUNSERVERPLUS_SERVER_ADDRESS_PORT = 'mysite.com:8000'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '45417767194-4d8jede2hb4u1rt68mttv0m6bf3b4uvd.apps.googleusercontent.com' # ИД клиента Google
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Секрет клиента Google
@@ -160,3 +162,8 @@ SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
 ]
+
+"""if DEBUG:
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)"""
